@@ -1,0 +1,8 @@
+# FOLDERS #
+**/artifacts
+**/cache
+**/db
+
+# FILES #
+**/keys.cfg
+**/.replxx_history
