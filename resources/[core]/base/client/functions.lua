@@ -62,7 +62,7 @@ function NoClip()
 		end
 
 		SetEntityCoordsNoOffset(Ped,X,Y,Z,false,false,false)
-		Wait(0)
+		Wait(1)
 	end
 end
 
