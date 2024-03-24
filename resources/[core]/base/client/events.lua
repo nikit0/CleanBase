@@ -4,7 +4,7 @@
 AddEventHandler("Base:Client:UpdateHud",function()
     local Online = #GetActivePlayers()
     local Player = GetPlayerName(PlayerId())
-    SendNUIMessage({ Action = "UpdateHud", Player = Player, Online = Online })
+    SendNUIMessage({ Action = "UpdateHud", Online = Online, Player = Player })
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- BASE:CLIENT:TELEPORTPLAYER

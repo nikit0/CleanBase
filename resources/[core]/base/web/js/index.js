@@ -7,8 +7,8 @@ const handlers = {
 	},
 
 	initFunctionInvoking(data) {
-		document.querySelector(".loadProgressBar").style.left = "0%"
-		document.querySelector(".loadProgressBar").style.width = (data.idx / count) * 100 + "%"
+		document.querySelector(".Progress").style.left = "0%"
+		document.querySelector(".Progress").style.width = (data.idx / count) * 100 + "%"
 	},
 
 	startDataFileEntries(data) {
@@ -17,11 +17,13 @@ const handlers = {
 
 	performMapLoadFunction(data) {
 		++thisCount
-		document.querySelector(".loadProgressBar").style.left = "0%"
-		document.querySelector(".loadProgressBar").style.width = (thisCount / count) * 100 + "%"
+		document.querySelector(".Progress").style.left = "0%"
+		document.querySelector(".Progress").style.width = (thisCount / count) * 100 + "%"
 	},
 }
 
-window.addEventListener("message", function (e) {
-	;(handlers[e.data.eventName] || function () {})(e.data)
+$(document).ready(function () {
+	window.addEventListener("message", function (e) {
+		;(handlers[e.data.eventName] || function () {})(e.data)
+	})
 })
