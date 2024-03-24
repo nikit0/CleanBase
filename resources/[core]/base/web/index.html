@@ -5,22 +5,24 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Loading</title>
-
 		<script src="nui://game/ui/jquery.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet" />
 		<link href="css/style.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
-		<div id="displayLogo"></div>
-		<div id="overlay"></div>
-		<img src="assets/logo.png" alt="" />
-		<div id="audio"></div>
 		<center>
-			<div class="loadbar">
-				<div class="progressBar" id="preloader"></div>
+			<div class="loadImage">
+				<img src="./assets/logo.png" alt="" />
 			</div>
 
-			<div class="tip-text">Welcome to Clean Base</div>
+			<div class="loadBar">
+				<div class="loadProgressBar" id="preloader"></div>
+			</div>
+
+			<div class="loadText">Welcome to Clean Base</div>
 		</center>
-		<script src="js/jquery.js"></script>
+		<script src="./js/index.js"></script>
 	</body>
 </html>

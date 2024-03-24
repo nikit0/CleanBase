@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Jura&display=swap");
-
 :root {
 	--color1: rgb(7, 24, 48);
 	--color2: rgb(22, 56, 131);
@@ -20,43 +18,7 @@ body {
 	}
 }
 
-.fullscreen-bg {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	overflow: hidden;
-	z-index: -100;
-	filter: opacity(60%);
-}
-
-.tip-text {
-	width: 100%;
-	font-family: "Jura", sans-serif;
-	height: auto;
-	position: absolute;
-	bottom: 26%;
-	left: 0px;
-	text-align: center;
-	color: var(--colortext);
-	font-size: 13px;
-	text-transform: uppercase;
-
-	animation: fadeInAnimation ease 3s;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-}
-
-.fullscreen-bg__video {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
-img {
+.loadImage img {
 	width: 270px;
 	position: absolute;
 	top: 50%;
@@ -68,14 +30,7 @@ img {
 	animation-fill-mode: forwards;
 }
 
-.container {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-
-.loadbar {
+.loadBar {
 	width: 440px;
 	background-color: var(--color3);
 	height: 10px;
@@ -92,10 +47,27 @@ img {
 	animation-fill-mode: forwards;
 }
 
-.progressBar {
+.loadProgressBar {
 	width: 0%;
 	background-color: var(--color2);
 	height: 20px;
 	position: absolute;
 	left: 10%;
+}
+
+.loadText {
+	width: 100%;
+	font-family: "Jura", sans-serif;
+	height: auto;
+	position: absolute;
+	bottom: 26%;
+	left: 0px;
+	text-align: center;
+	color: var(--colortext);
+	font-size: 13px;
+	text-transform: uppercase;
+
+	animation: fadeInAnimation ease 3s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
 }
