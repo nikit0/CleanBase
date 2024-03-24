@@ -1,0 +1,35 @@
+body {
+	font-family: "Jura", sans-serif;
+	color: #fff;
+}
+
+.Name {
+	position: absolute;
+	font-size: 22px;
+	bottom: 20%;
+	left: 2.2%;
+	text-shadow: 1px 1px 1px #000;
+}
+
+.Name blue {
+	color: rgb(100, 190, 250);
+}
+
+.Infos {
+	position: absolute;
+	bottom: 4%;
+	left: 16%;
+	text-shadow: 1px 1px 1px #000;
+}
+
+.Title red {
+	color: rgb(255, 0, 0);
+}
+
+.Title yellow {
+	color: rgb(255, 255, 0);
+}
+
+.Title green {
+	color: rgb(0, 255, 0);
+}

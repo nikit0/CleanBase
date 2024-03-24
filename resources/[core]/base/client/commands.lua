@@ -54,6 +54,8 @@ DisplayHud = true
 RegisterCommand("hud",function()
 	DisplayHud = not DisplayHud
 
+    SendNUIMessage({ Action = DisplayHud })
+
 	local DisplayHudText = DisplayHud and "Enabled" or "Disabled"
 	print("Hud "..DisplayHudText)
 end)

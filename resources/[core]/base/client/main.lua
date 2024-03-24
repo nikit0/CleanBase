@@ -21,6 +21,10 @@ AddEventHandler("onClientResourceStart",function(ResourceName)
 	end
 
 	ShutdownLoadingScreen()
+	ShutdownLoadingScreenNui()
+	Wait(500)
+
+	TriggerEvent("Base:Client:UpdateHud")
 
 	print("Spawn Loaded Successfully")
 end)
