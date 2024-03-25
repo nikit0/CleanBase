@@ -38,6 +38,9 @@ AddEventHandler("gameEventTriggered",function(Name)
             SetEntityHealth(Ped,200)
 
             print("Player Health Restored")
+
+			Wait(3000)
+			NetworkResurrectLocalPlayer(GetEntityCoords(Ped),GetEntityHeading(Ped),true,false)
 		end
 	end
 end)
