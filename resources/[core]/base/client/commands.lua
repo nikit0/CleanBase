@@ -1,14 +1,14 @@
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- BASE:NC
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("nc",function()
+RegisterCommand(Config.Commands.Nc,function()
 	-- NoClip()
 	exports["base"]:NoClip()
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- BASE:GOD
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("god",function()
+RegisterCommand(Config.Commands.God,function()
 	local Ped = PlayerPedId()
 	SetEntityHealth(Ped,200)
 	ClearPedTasks(Ped)
@@ -23,7 +23,7 @@ end)
 -- BASE:HUD
 -----------------------------------------------------------------------------------------------------------------------------------------
 DisplayHud = true
-RegisterCommand("hud",function()
+RegisterCommand(Config.Commands.Hud,function()
 	DisplayHud = not DisplayHud
 
     SendNUIMessage({ Hud = DisplayHud })
@@ -34,7 +34,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- BASE:REC
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("rec",function()
+RegisterCommand(Config.Commands.Rec,function()
 	if IsRecording() then
         StopRecordingAndSaveClip()
 
@@ -48,7 +48,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- BASE:CDS
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("cds",function()
+RegisterCommand(Config.Commands.Cds,function()
 	local Pos = GetEntityCoords(PlayerPedId())
     local Coords = string.format("%.2f,%.2f,%.2f",Pos["x"],Pos["y"],Pos["z"])
 	print("Position:",Coords)
@@ -56,7 +56,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- BASE:TPCDS
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("tpcds",function(Source,Args)
+RegisterCommand(Config.Commands.Tpcds,function(Source,Args)
     if #Args < 1 then
         print("Usage: tpcds x,y,z")
         return

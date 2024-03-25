@@ -6,7 +6,7 @@ AddEventHandler("onClientResourceStart",function(ResourceName)
 		return
 	end
 
-	local ModelHash = GetHashKey("ig_sol")
+	local ModelHash = GetHashKey(Config.Model)
 
 	RequestModel(ModelHash)
 	while not HasModelLoaded(ModelHash) do
@@ -31,7 +31,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- BASE:GAMEEVENTTRIGGERED
 -----------------------------------------------------------------------------------------------------------------------------------------
-AddEventHandler("gameEventTriggered",function(Name,Args)
+AddEventHandler("gameEventTriggered",function(Name)
 	if Name == "CEventNetworkEntityDamage" then
 		local Ped = PlayerPedId()
 		if GetEntityHealth(Ped) <= 0 then

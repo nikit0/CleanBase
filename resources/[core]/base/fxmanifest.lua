@@ -12,6 +12,10 @@ server_scripts {
 	"server/*"
 }
 
+shared_scripts {
+	"shared/*"
+}
+
 files {
 	"web/**"
 }

@@ -16,7 +16,7 @@ AddEventHandler("Base:Server:Connect",function()
         local Pos = json.decode(LastPos)
         TriggerClientEvent("Base:Client:Teleport",source,Pos)
     else
-        TriggerClientEvent("Base:Client:Teleport",source,{ x = -1648.06, y = -1017.98, z = 13.01 })
+        TriggerClientEvent("Base:Client:Teleport",source,{ x = Config.Teleport[1], y = Config.Teleport[2], z = Config.Teleport[3] })
     end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
