@@ -1,12 +1,12 @@
 -----------------------------------------------------------------------------------------------------------------------------------------
--- NC
+-- BASE:NC
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand("nc",function()
 	-- NoClip()
 	exports["base"]:NoClip()
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
--- GOD
+-- BASE:GOD
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand("god",function()
 	local Ped = PlayerPedId()
@@ -20,7 +20,41 @@ RegisterCommand("god",function()
 	print("God Command Used")
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
--- TPCDS
+-- BASE:HUD
+-----------------------------------------------------------------------------------------------------------------------------------------
+DisplayHud = true
+RegisterCommand("hud",function()
+	DisplayHud = not DisplayHud
+
+    SendNUIMessage({ Hud = DisplayHud })
+
+	local DisplayHudText = DisplayHud and "Enabled" or "Disabled"
+	print("Hud "..DisplayHudText)
+end)
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- BASE:REC
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand("rec",function()
+	if IsRecording() then
+        StopRecordingAndSaveClip()
+
+		print("Recording Stopped")
+    else
+        StartRecording(1)
+
+		print("Recording Started")
+    end
+end)
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- BASE:CDS
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand("cds",function()
+	local Pos = GetEntityCoords(PlayerPedId())
+    local Coords = string.format("%.2f,%.2f,%.2f",Pos["x"],Pos["y"],Pos["z"])
+	print("Position:",Coords)
+end)
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- BASE:TPCDS
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand("tpcds",function(Source,Args)
     if #Args < 1 then
@@ -37,39 +71,5 @@ RegisterCommand("tpcds",function(Source,Args)
         TriggerEvent("Base:Client:TeleportPlayer",{["x"] = Coords[1], ["y"] = Coords[2], ["z"] = Coords[3]})
     else
         print("Invalid coordinates. Please enter in the format tpcds x,y,z.")
-    end
-end)
------------------------------------------------------------------------------------------------------------------------------------------
--- CDS
------------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("cds",function()
-	local Pos = GetEntityCoords(PlayerPedId())
-    local Coords = string.format("%.2f,%.2f,%.2f",Pos["x"],Pos["y"],Pos["z"])
-	print("Position:",Coords)
-end)
------------------------------------------------------------------------------------------------------------------------------------------
--- HUD
------------------------------------------------------------------------------------------------------------------------------------------
-DisplayHud = true
-RegisterCommand("hud",function()
-	DisplayHud = not DisplayHud
-
-    SendNUIMessage({ Action = DisplayHud })
-
-	local DisplayHudText = DisplayHud and "Enabled" or "Disabled"
-	print("Hud "..DisplayHudText)
-end)
------------------------------------------------------------------------------------------------------------------------------------------
--- REC
------------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("rec",function()
-	if IsRecording() then
-        StopRecordingAndSaveClip()
-
-		print("Recording Stopped")
-    else
-        StartRecording(1)
-
-		print("Recording Started")
     end
 end)
