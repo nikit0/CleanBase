@@ -71,7 +71,7 @@ RegisterCommand(Config.Commands.Tpcds,function(Source,Args)
     end
 
     if #Coords == 3 then
-        TriggerEvent("Base:Client:TeleportPlayer",{["x"] = Coords[1], ["y"] = Coords[2], ["z"] = Coords[3]})
+        TriggerEvent("Base:Client:Teleport",{["x"] = Coords[1], ["y"] = Coords[2], ["z"] = Coords[3]})
     else
         print("Invalid coordinates. Please enter in the format tpcds x,y,z.")
     end
