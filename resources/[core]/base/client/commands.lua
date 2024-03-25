@@ -24,12 +24,15 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 DisplayHud = true
 RegisterCommand(Config.Commands.Hud,function()
-	DisplayHud = not DisplayHud
+    if not IsPauseMenuActive() then
+        DisplayHud = not DisplayHud
 
-    SendNUIMessage({ Hud = DisplayHud })
+        DisplayRadar(DisplayHud)
+        SendNUIMessage({ Hud = DisplayHud })
 
-	local DisplayHudText = DisplayHud and "Enabled" or "Disabled"
-	print("Hud "..DisplayHudText)
+        local DisplayHudText = DisplayHud and "Enabled" or "Disabled"
+        print("Hud "..DisplayHudText)
+    end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- BASE:REC

@@ -2,18 +2,17 @@
 -- BASE:THREAD:GENERAL
 -----------------------------------------------------------------------------------------------------------------------------------------
 CreateThread(function()
+    AddTextEntry("FE_THDR_GTAO","Welcome to ~b~Clean Base")
     while true do
         Wait(1000)
 
-        DisplayRadar(DisplayHud)
-        SetPedCanRagdoll(PlayerPedId(),false)
-        AddTextEntry("FE_THDR_GTAO","Welcome to ~b~Clean Base")
-        
         if IsPauseMenuActive() then
             SendNUIMessage({ Hud = false })
         else
-            SendNUIMessage({ Hud = true })
+            SendNUIMessage({ Hud = DisplayHud })
         end
+    
+        SetPedCanRagdoll(PlayerPedId(),false)
     end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
